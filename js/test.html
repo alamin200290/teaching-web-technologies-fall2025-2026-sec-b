@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+    <h1>JSS Example</h1>
+
+    <form action="" method="" enctype="" id="login" onsubmit="return checklogin()">
+    <input type="text" id="username" name="username" value="" placeholder="username" onblur="testUsername()" />
+    <p id="uError"></p>
+    <input type="text" id="password" name="password" value="" placeholder="password" onblur="testPassword()" /> <br>
+    <p id="pError"></p>
+    <input type="submit" name="" value="submit" id="btn"/>
+    </form>
+
+
+
+    <script>
+        //name = "alamin";
+        //var name = "alamin";
+        // let name = "alamin";
+        // let cgpa = 3.5;
+
+        // let std = [1,'alamin', 3.5 ];
+        //     std[0];
+
+        // if(){
+
+        // }else{
+
+        // }
+
+        // for(let a=0; a<10; a++){
+
+        // }
+
+        // function xyz(abc, b){
+        //     //let c = a+b;
+        //     let c = abc(10,20);
+        //     return c;
+        // }
+
+        // let abc = function(a, b){
+        //     let c = a+b;
+        //     return c;
+        // }
+        // let d =xyz();
+
+        // let sum = (a,b)=>a+b;
+
+        // if('10'===10){
+        //     true;
+        // }else{
+        //     false;
+        // }
+
+        //alert('test');
+        //console.log('testing form script');
+
+        //document.getElementById('btn').addEventListener('click', test);
+
+
+        function testUsername(){
+            //document.write('testing from js');
+            //document.getElementsByTagName('body')[0].style.backgroundColor = 'green';
+            let username = document.getElementById('username').value;
+            let msg = document.getElementById('pError');
+
+            if(username == ""){
+                    //alert('please type username!');
+                    msg.innerHTML = "please type username first!";
+                    msg.style.color = "red";
+                    
+            }else{
+                document.getElementsByTagName('h1')[0].innerHTML = username;
+                msg.innerHTML = "";
+            }
+            //let head = document.getElementsByTagName('h1')[0];
+            //head.innerHTML = username;
+        }
+
+        function testPassword(){
+
+        }
+
+        function checklogin(){
+            
+        }
+
+    </script>
+</body>
+</html>
