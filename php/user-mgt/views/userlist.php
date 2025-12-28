@@ -1,5 +1,14 @@
 <?php
    require_once('../controllers/authCheck.php');
+
+   $users = [
+    ['id'=>1, 'username'=>'alamin', 'password'=>'123', 'email'=>'alamin@aiub.edu'],
+    ['id'=>2, 'username'=>'abc', 'password'=>'123', 'email'=>'alamin@aiub.edu'],
+    ['id'=>3, 'username'=>'xyz', 'password'=>'123', 'email'=>'alamin@aiub.edu'],
+    ['id'=>4, 'username'=>'pqr', 'password'=>'123', 'email'=>'alamin@aiub.edu'],
+    ['id'=>5, 'username'=>'asd', 'password'=>'123', 'email'=>'alamin@aiub.edu'],
+    ['id'=>5, 'username'=>'asd', 'password'=>'123', 'email'=>'alamin@aiub.edu']
+   ]
 ?>
 
 
@@ -24,16 +33,19 @@
                 <th>EMAIL</th>
                 <th>ACTION</th>
             </tr>
+
+            <?php   foreach($users as $u){ ?>
             <tr>
-                <td>1</td>
-                <td>alamin</td>
-                <td>alamin@aiub.edu</td>
+                <td><?php echo $u['id']; ?></td>
+                <td><?php echo $u['username']; ?>in</td>
+                <td><?=$u['email'] ?></td>
                 <td>
-                    <a href="edit.php"> EDIT </a> | 
-                    <a href="delete.php"> DELETE </a> | 
-                    <a href="details.php"> DETAILS </a> | 
+                    <a href="edit.php?id=<?=$u['id']?>"> EDIT </a> | 
+                    <a href="delete.php?id=<?=$u['id']?>"> DELETE </a> | 
+                    <a href="details.php?id=<?=$u['id']?>"> DETAILS </a> 
                  </td>
             </tr>
+            <?php } ?>
         </table>
 </body>
 </html>
