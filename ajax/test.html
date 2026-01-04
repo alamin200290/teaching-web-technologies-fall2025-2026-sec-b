@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ajax Example</title>
+</head>
+<body>
+        <h1 id="head"> Ajax Example</h1>
+        <input type="text" name="username" id="username" value=""/>
+        <input type="button" name="submit" id="submit" value="Submit" onclick="ajax()"/>
+        <input type="button" name="click" id="click" value="Click" onclick="alert('another task')"/>
+
+
+        <script>
+            function ajax(){
+                let username = document.getElementById('username').value;
+                //alert(username);
+                let xhttp = new XMLHttpRequest();
+                xhttp.open('GET', 'upload.php?username='+username, true);
+                xhttp.send();
+                xhttp.onreadystatechange = function(){
+
+                    if(this.readyState == 4 && this.status == 200){
+                        //alert(this.responseText);
+                        document.getElementById('head').innerHTML = this.responseText;
+                    }
+                }
+
+            }
+        </script>
+</body>
+</html>
